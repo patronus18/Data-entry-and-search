@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flammability Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Flammability Data</h1>
+    <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('search')">Search Data</a>
+        <a href="#" onclick="showSection('add')">Add New Entry</a>
+        <a href="#" onclick="showSection('predict')">Predict Flammability</a>
+    </nav>
+    <div id="home" class="section">
+        <h2>Data</h2>
+        <table id="data-table">
+            <!-- Data will be loaded here via JavaScript -->
+        </table>
+    </div>
+    <div id="search" class="section" style="display:none;">
+        <h2>Search Flammability Data</h2>
+        <input type="text" id="search-query" placeholder="Search...">
+        <button onclick="searchData()">Search</button>
+        <table id="search-results">
+            <!-- Search results will be loaded here via JavaScript -->
+        </table>
+    </div>
+    <div id="add" class="section" style="display:none;">
+        <h2>Add/Edit Flammability Entry</h2>
+        <form id="add-form">
+            <label>Material Name: <input type="text" name="material_name"></label><br>
+            <label>Material Type: <input type="text" name="material_type"></label><br>
+            <label>Thickness: <input type="text" name="thickness"></label><br>
+            <label>Density: <input type="text" name="density"></label><br>
+            <label>Flammability Rating: <input type="text" name="flammability_rating"></label><br>
+            <label>Ignition Temp: <input type="text" name="ignition_temp"></label><br>
+            <label>Burn Time: <input type="text" name="burn_time"></label><br>
+            <label>Heat Release Rate: <input type="text" name="heat_release_rate"></label><br>
+            <label>Smoke Production: <input type="text" name="smoke_production"></label><br>
+            <label>Toxicity: <input type="text" name="toxicity"></label><br>
+            <label>Regulations: <input type="text" name="regulations"></label><br>
+            <label>Use Case: <input type="text" name="use_case"></label><br>
+            <label>Manufacturer: <input type="text" name="manufacturer"></label><br>
+            <label>Flammability Class: <input type="text" name="flammability_class"></label><br>
+            <label>Pass/Fail: <input type="text" name="pass_fail"></label><br>
+            <button type="button" onclick="addEntry()">Add Entry</button>
+        </form>
+    </div>
+    <div id="predict" class="section" style="display:none;">
+        <h2>Predict Flammability</h2>
+        <form id="predict-form">
+            <label>Material Name: <input type="text" name="material_name"></label><br>
+            <label>Flammability Class: <input type="text" name="flammability_class"></label><br>
+            <button type="button" onclick="predictFlammability()">Predict</button>
+        </form>
+        <h2 id="prediction-result"></h2>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
